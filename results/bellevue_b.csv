@@ -1,0 +1,15 @@
+address,district,email,muniName,muniType,name,office,phone,termEnd,termStart,url,vacant
+"537 Bayne Ave., Pittsburgh, PA 15202",AT-LARGE,marburger@bellevueboro.com,BELLEVUE,BOROUGH,Emily Marburger,MAYOR,4127666164,,,https://www.bellevuepa.org/government,False
+"537 Bayne Ave., Pittsburgh, PA 15202",WARD 1,hause@bellevueboro.com,BELLEVUE,BOROUGH,Jodie Hause,MEMBER OF COUNCIL,4127666164,,,https://www.bellevuepa.org/government,False
+"537 Bayne Ave., Pittsburgh, PA 15202",WARD 1,pennington@bellevueboro.com,BELLEVUE,BOROUGH,Val Pennington,MEMBER OF COUNCIL,4127666164,,,https://www.bellevuepa.org/government,False
+"537 Bayne Ave., Pittsburgh, PA 15202",WARD 1,cerminara@bellevueboro.com,BELLEVUE,BOROUGH,Jodi Cerminara,MEMBER OF COUNCIL,4127666164,,,https://www.bellevuepa.org/government,False
+"537 Bayne Ave., Pittsburgh, PA 15202",WARD 2,ditullio@bellevueboro.com,BELLEVUE,BOROUGH,Anthony DiTullio,MEMBER OF COUNCIL,4127666164,,,https://www.bellevuepa.org/government,False
+"537 Bayne Ave., Pittsburgh, PA 15202",WARD 2,stuncard@bellevueboro.com,BELLEVUE,BOROUGH,Jeff Stuncard,MEMBER OF COUNCIL,4127666164,,,https://www.bellevuepa.org/government,False
+"537 Bayne Ave., Pittsburgh, PA 15202",WARD 2,pikul@bellevueboro.com,BELLEVUE,BOROUGH,Anya Pikul,MEMBER OF COUNCIL,4127666164,,,https://www.bellevuepa.org/government,False
+"537 Bayne Ave., Pittsburgh, PA 15202",WARD 3,edmondson@bellevueboro.com,BELLEVUE,BOROUGH,Jillian S. Edmondson,MEMBER OF COUNCIL,4127666164,,,https://www.bellevuepa.org/government,False
+"537 Bayne Ave., Pittsburgh, PA 15202",WARD 3,pritchard@bellevueboro.com,BELLEVUE,BOROUGH,Glenn Pritchard,MEMBER OF COUNCIL,4127666164,,,https://www.bellevuepa.org/government,False
+"537 Bayne Ave., Pittsburgh, PA 15202",WARD 3,sloane@bellevueboro.com,BELLEVUE,BOROUGH,Amanda Sloane,MEMBER OF COUNCIL,4127666164,,,https://www.bellevuepa.org/government,False
+"537 Bayne Ave., Pittsburgh, PA 15202",AT-LARGE,bellevuetax@gmail.com,BELLEVUE,BOROUGH,Joe Nolan,TAX COLLECTOR,4127666164,,,https://www.bellevuepa.org/government,False
+"537 Bayne Ave., Pittsburgh, PA 15202",AT-LARGE,,BELLEVUE,BOROUGH,Jane Braunlich,AUDITOR,4127666164,,,https://www.bellevuepa.org/government,False
+"537 Bayne Ave., Pittsburgh, PA 15202",AT-LARGE,,BELLEVUE,BOROUGH,Linda Haberstich,AUDITOR,4127666164,,,https://www.bellevuepa.org/government,False
+,AT-LARGE,,BELLEVUE,BOROUGH,,AUDITOR,,,,https://www.bellevuepa.org/government,True
