@@ -4,6 +4,7 @@ from collections import Counter
 from os.path import exists
 from os import rename, remove
 from json import loads
+import xml.etree.ElementTree as ET
 
 process = CrawlerProcess(get_project_settings())
 
@@ -22,6 +23,10 @@ process.start() # the script will block here until the crawling is finished
 # considerations:
 #	cannot assume items will be in the same order
 #	all pieces must be present and equal in both versions; not more or less information than before
+
+tree = ET.parse('alleco/supp_data/map.svg')
+root = tree.getroot()
+
 mess_same = "These files were the same ({}/{}):"
 mess_diff = "These files were NOT the same ({}/{}):"
 mess_noPrior = "No prior versions of these files existed ({}/{}):"
@@ -61,4 +66,11 @@ for spider in spiderList:
 for key in spiderStatus:
 	print(key.format(len(spiderStatus[key]), len(spiderList)))
 	for spiName in spiderStatus[key]:
-		print("\t"+spiName)
+		muniSvgs = [muni for child in root for muni in child if muni.attrib["id"] == spiName]
+		if len(muniSvgs)==1:
+			muniSvgs[0].attrib["fill"] = "#00FA9A" if key==mess_same else "#800000"
+			print("\t"+spiName)
+		else:
+			print("\t"+spiName+" (map error)")
+
+tree.write('alleco/supp_data/map.svg')

@@ -1,6 +1,9 @@
 # `alleco`
 ### Tracking the governments of Allegheny County's 130 municipalities
 
+![A map of Allegheny County with completed municipalities highlighted.](/alleco/supp_data/map.svg)
+_Key: Green means the municipality's spider is working, red means otherwise_
+
 ## What is this?
 This is a project to understand and keep track of the governments of the 130 municipalities in Allegheny County, Pennsylvania. Because there is no (known) centralized database nor predictable structure to how those governments are organized or who runs them, we have to do things the most efficient way I can figure: webscraping each municipality's website.
 
