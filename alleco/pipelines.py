@@ -20,17 +20,37 @@ def cleanItem(string):
 def cleanPhone(string):
 	if string==None: return None
 	string = cleanItem(string)
-	match = search(r"(\d{3})[\) -]{0,2}(\d{3})[ -]?(\d{4})[, ]{0,2}(ext(ension|.) )?(?P<ext>\d+)?", string)
+	match = search(r"(\d{3})[\) -]{0,2}(\d{3})[ -]?(\d{4})[, ]{0,2}(ext(ension|.) | ?x ?)?(?P<ext>\d+)?", string)
 	if match == None: return string
 	else:
 		ending = "" if match.group("ext")==None else "p"+match.group("ext")
 		return match[1]+match[2]+match[3]+ending
+
+def cleanDates(string):
+	if string==None: return None
+	string = cleanItem(string)
+	months = ["January","February","March","April","May","June",
+				"July","August","September","October","November","December"]
+	match = search("(?P<month>{})".format("|".join(months))+r"? ?(?P<date>\d{1,2})?,? ?(?P<year>\d{4})", string)
+	if match == None: return string
+	else:
+		toRet = ""
+		toRet = match.group("year")
+		if match.group("month")!=None and match.group("month") in months:
+			monthInt = next(x for x in range(len(months)) if months[x] == match.group("month"))+1
+			toRet += "-"+("" if monthInt>9 else "0")+str(monthInt)
+		if match.group("date")!=None and int(match.group("date"))<=31:
+			dateInt = int(match.group("date"))
+			toRet += "-"+("" if dateInt>9 else "0")+str(dateInt)
+		return toRet
 
 class AllecoPipeline:
 	def process_item(self, item, spider):
 		item["name"] = cleanItem(item["name"])
 		if "email" in item: item["email"] = cleanItem(item["email"])
 		if "phone" in item: item["phone"] = cleanPhone(item["phone"])
+		if "termStart" in item: item["termStart"] = cleanDates(item["termStart"])
+		if "termEnd" in item: item["termEnd"] = cleanDates(item["termEnd"])
 		return item
 
 class CsvExportPipeline:

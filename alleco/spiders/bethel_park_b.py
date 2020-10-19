@@ -41,5 +41,4 @@ class bethel_park_b(scrapy.Spider):
 
 	def _termEnd(self, string):
 		parts = string.strip().split(" ")[1:]
-		print(parts)
-		return date(int(parts[2]), 12 if parts[0]=="December" else -1, int(parts[1].strip(","))).isoformat()
+		return " ".join(parts)
