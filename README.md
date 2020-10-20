@@ -2,6 +2,7 @@
 ### Tracking the governments of Allegheny County's 130 municipalities
 
 ![A map of Allegheny County with completed municipalities highlighted.](/alleco/supp_data/map.svg)
+
 _Key: Green means the municipality's spider is working, red means otherwise_
 
 ## What is this?
