@@ -14,6 +14,7 @@ def cleanItem(string):
 	if string==None: return None
 	string = string.strip()
 	string = sub("(\u2018|\u2019)", "'", string)
+	string = sub("(\u201C|\u201D)", '"', string)
 	if string[0:7] == "mailto:": string = string[7:]
 	return sub(r"\s+", " ", string)
 

@@ -12,7 +12,7 @@ spiderList = ['aleppo_t', 'aspinwall_b', 'avalon_b', 'baldwin_b',
 				'baldwin_t', 'bell_acres_b', 'bellevue_b', 'ben_avon_b',
 				'ben_avon_heights_b', 'bethel_park_b', 'blawnox_b', 'brackenridge_b',
 				'braddock_b', 'braddock_hills_b', 'bradford_woods_b', 'brentwood_b',
-				'bridgeville_b', 'castle_shannon_b']#, 'carnegie_b']
+				'bridgeville_b', 'castle_shannon_b', 'chalfant_b']#, 'carnegie_b'
 
 # all of the spiders in the project.
 for spider in spiderList:
@@ -72,5 +72,11 @@ for key in spiderStatus:
 			print("\t"+spiName)
 		else:
 			print("\t"+spiName+" (map error)")
+
+#reset fill of spiders who may have been run before but are no longer
+for child in root:
+	for muni in child:
+		if muni.attrib["id"] not in spiderList:
+			muni.attrib["fill"] = "white"
 
 tree.write('alleco/supp_data/map.svg')
