@@ -5,6 +5,7 @@ class bradford_woods_b(scrapy.Spider):
 	name = "bradford_woods_b"
 	muniName = "BRADFORD WOODS"
 	muniType = "BOROUGH"
+	complete = True
 
 	def start_requests(self):
 		urls = ['https://www.bradfordwoodspa.org/2154/Elected-Officials']

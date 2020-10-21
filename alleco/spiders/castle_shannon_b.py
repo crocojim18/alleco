@@ -5,6 +5,7 @@ class castle_shannon_b(scrapy.Spider):
 	name = "castle_shannon_b"
 	muniName = "CASTLE SHANNON"
 	muniType = "BOROUGH"
+	complete = True
 
 	def start_requests(self):
 		urls = ['https://borough.castle-shannon.pa.us/resources/government-officials/',

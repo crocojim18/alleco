@@ -5,6 +5,7 @@ class bell_acres_b(scrapy.Spider):
 	name = "bell_acres_b"
 	muniName = "BELL ACRES"
 	muniType = "BOROUGH"
+	complete = True
 
 	def start_requests(self):
 		urls = ['http://bellacresborough.org/government/',

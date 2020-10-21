@@ -5,6 +5,7 @@ class avalon_b(scrapy.Spider):
 	name = "avalon_b"
 	muniName = "AVALON"
 	muniType = "BOROUGH"
+	complete = True
 
 	def start_requests(self):
 		urls = ['http://www.boroughofavalon.org/officials.html']

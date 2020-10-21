@@ -5,6 +5,7 @@ class bridgeville_b(scrapy.Spider):
 	name = "bridgeville_b"
 	muniName = "BRIDGEVILLE"
 	muniType = "BOROUGH"
+	complete = True
 
 	def start_requests(self):
 		urls = ['https://bridgevilleboro.com/officials/']

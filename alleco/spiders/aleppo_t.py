@@ -6,6 +6,7 @@ class aleppo_t(scrapy.Spider):
 	name = "aleppo_t"
 	muniName = "ALEPPO"
 	muniType = "TOWNSHIP"
+	complete = True
 
 	def start_requests(self):
 		urls = ['https://aleppotownship.com/officials/']

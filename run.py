@@ -12,7 +12,8 @@ spiderList = ['aleppo_t', 'aspinwall_b', 'avalon_b', 'baldwin_b',
 				'baldwin_t', 'bell_acres_b', 'bellevue_b', 'ben_avon_b',
 				'ben_avon_heights_b', 'bethel_park_b', 'blawnox_b', 'brackenridge_b',
 				'braddock_b', 'braddock_hills_b', 'bradford_woods_b', 'brentwood_b',
-				'bridgeville_b', 'castle_shannon_b', 'chalfant_b']#, 'carnegie_b'
+				'bridgeville_b', 'carnegie_b', 'castle_shannon_b', 'chalfant_b',
+				'cheswick_b']
 
 # all of the spiders in the project.
 for spider in spiderList:
@@ -66,17 +67,16 @@ for spider in spiderList:
 for key in spiderStatus:
 	print(key.format(len(spiderStatus[key]), len(spiderList)))
 	for spiName in spiderStatus[key]:
-		muniSvgs = [muni for child in root for muni in child if muni.attrib["id"] == spiName]
-		if len(muniSvgs)==1:
-			muniSvgs[0].attrib["fill"] = "#00FA9A" if key==mess_same else "#800000"
-			print("\t"+spiName)
-		else:
-			print("\t"+spiName+" (map error)")
+		print("\t"+spiName)
 
 #reset fill of spiders who may have been run before but are no longer
 for child in root:
 	for muni in child:
-		if muni.attrib["id"] not in spiderList:
+		if muni.attrib["id"] in spiderList and muni.attrib["id"] in spiderStatus[mess_same]:
+			muni.attrib["fill"] = "#00FA9A"
+		elif muni.attrib["id"] in spiderList and muni.attrib["id"] not in spiderStatus[mess_same]:
+			muni.attrib["fill"] = "#800000"
+		elif muni.attrib["id"] not in spiderList:
 			muni.attrib["fill"] = "white"
 
 tree.write('alleco/supp_data/map.svg')

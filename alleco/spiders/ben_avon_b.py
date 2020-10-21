@@ -5,6 +5,7 @@ class ben_avon_b(scrapy.Spider):
 	name = "ben_avon_b"
 	muniName = "BEN AVON"
 	muniType = "BOROUGH"
+	complete = True
 
 	def start_requests(self):
 		urls = ['https://benavon.com/ben-avon-2/',

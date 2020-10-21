@@ -5,6 +5,7 @@ class brackenridge_b(scrapy.Spider):
 	name = "brackenridge_b"
 	muniName = "BRACKENRIDGE"
 	muniType = "BOROUGH"
+	complete = True
 
 	def start_requests(self):
 		urls = ['http://brackenridgeboro.com/officials/']

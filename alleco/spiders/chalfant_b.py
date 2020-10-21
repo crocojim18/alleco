@@ -6,6 +6,7 @@ class chalfant_b(scrapy.Spider):
 	name = "chalfant_b"
 	muniName = "CHALFANT"
 	muniType = "BOROUGH"
+	complete = True
 
 	def start_requests(self):
 		urls = ['http://chalfantborough-pa.org/government/borough-council/']

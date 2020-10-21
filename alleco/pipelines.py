@@ -60,17 +60,20 @@ class CsvExportPipeline:
 		self.exporter = None
 
 	def open_spider(self, spider):
-		self.file = open("results/%s_temp.csv" % spider.name, 'wb')
-		self.exporter = CsvItemExporter(self.file)
-		self.exporter.start_exporting()
+		if spider.complete:
+			self.file = open("results/%s_temp.csv" % spider.name, 'wb')
+			self.exporter = CsvItemExporter(self.file)
+			self.exporter.start_exporting()
 
 	def close_spider(self, spider):
-		self.exporter.finish_exporting()
-		self.file.close()
+		if spider.complete:
+			self.exporter.finish_exporting()
+			self.file.close()
 
 	def process_item(self, item, spider):
 		self._setDefaults(item)
-		self.exporter.export_item(item)
+		if spider.complete:
+			self.exporter.export_item(item)
 		return item
 
 	def _setDefaults(self,item):

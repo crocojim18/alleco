@@ -8,6 +8,7 @@ class aspinwall_b(scrapy.Spider):
 	name = "aspinwall_b"
 	muniName = "ASPINWALL"
 	muniType = "BOROUGH"
+	complete = True
 
 	def start_requests(self):
 		urls = ['https://www.aspinwallpa.com/aspinwall-borough',

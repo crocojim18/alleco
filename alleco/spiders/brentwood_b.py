@@ -5,6 +5,7 @@ class brentwood_b(scrapy.Spider):
 	name = "brentwood_b"
 	muniName = "BRENTWOOD"
 	muniType = "BOROUGH"
+	complete = True
 
 	def start_requests(self):
 		urls = ['https://www.brentwoodboro.com/borough-council.html',

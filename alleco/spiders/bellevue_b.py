@@ -5,6 +5,7 @@ class bellevue_b(scrapy.Spider):
 	name = "bellevue_b"
 	muniName = "BELLEVUE"
 	muniType = "BOROUGH"
+	complete = True
 
 	def start_requests(self):
 		urls = ['https://www.bellevuepa.org/government']

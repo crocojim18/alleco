@@ -5,6 +5,7 @@ class ben_avon_heights_b(scrapy.Spider):
 	name = "ben_avon_heights_b"
 	muniName = "BEN AVON HEIGHTS"
 	muniType = "BOROUGH"
+	complete = True
 
 	def start_requests(self):
 		urls = ['http://www.benavonheightsborough.com/borough/index.html',

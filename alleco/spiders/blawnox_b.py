@@ -5,6 +5,7 @@ class blawnox_b(scrapy.Spider):
 	name = "blawnox_b"
 	muniName = "BLAWNOX"
 	muniType = "BOROUGH"
+	complete = True
 
 	def start_requests(self):
 		urls = ['https://www.blawnox.com/borough-mayor-council',

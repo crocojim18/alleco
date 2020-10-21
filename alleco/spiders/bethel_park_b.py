@@ -6,6 +6,7 @@ class bethel_park_b(scrapy.Spider):
 	name = "bethel_park_b"
 	muniName = "BETHEL PARK"
 	muniType = "BOROUGH"
+	complete = True
 
 	def start_requests(self):
 		urls = ['https://bethelpark.net/home-page/government/councilmayor/']
