@@ -51,8 +51,7 @@ for spider in spiderList:
 		oldFile.close()
 		filesSame = Counter(tempList) == Counter(oldList)
 		if filesSame:
-			remove("results/%s.csv" % spider)
-			rename("results/%s_temp.csv" % spider, "results/%s.csv" % spider)
+			remove("results/%s_temp.csv" % spider)
 			spiderStatus[mess_same].append(spider)
 		else:
 			spiderStatus[mess_diff].append(spider)
