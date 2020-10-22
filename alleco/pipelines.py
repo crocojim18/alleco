@@ -27,13 +27,31 @@ def cleanPhone(string):
 		ending = "" if match.group("ext")==None else "p"+match.group("ext")
 		return match[1]+match[2]+match[3]+ending
 
+def cleanDatesNumeric(string):
+	if string==None: return None
+	match = search(r"(?P<month>\d{1,2})[-/]((?P<date>\d{1,2})[/-])?(?P<year>\d{2,4})", string)
+	if match == None: return string
+	else:
+		toRet = ""
+		yearInt = int(match.group("year"))
+		if yearInt < 100:
+			if yearInt < 50: yearInt += 2000
+			else: yearInt += 1900
+		toRet = str(yearInt)
+		monthInt = int(match.group("month"))
+		toRet += "-"+("" if monthInt>9 else "0")+str(monthInt)
+		if match.group("date")!=None and int(match.group("date"))<=31:
+			dateInt = int(match.group("date"))
+			toRet += "-"+("" if dateInt>9 else "0")+str(dateInt)
+		return toRet
+
 def cleanDates(string):
 	if string==None: return None
 	string = cleanItem(string)
 	months = ["January","February","March","April","May","June",
 				"July","August","September","October","November","December"]
 	match = search("(?P<month>{})".format("|".join(months))+r"? ?(?P<date>\d{1,2})?,? ?(?P<year>\d{4})", string)
-	if match == None: return string
+	if match == None: return cleanDatesNumeric(string)
 	else:
 		toRet = ""
 		toRet = match.group("year")
