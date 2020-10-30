@@ -14,7 +14,8 @@ spiderList = ['aleppo_t', 'aspinwall_b', 'avalon_b', 'baldwin_b',
 				'braddock_b', 'braddock_hills_b', 'bradford_woods_b', 'brentwood_b',
 				'bridgeville_b', 'carnegie_b', 'castle_shannon_b', 'chalfant_b',
 				'cheswick_b', 'churchill_b', 'clairton_c', 'collier_t', 'coraopolis_b',
-				'crafton_b', 'crescent_t']
+				'crafton_b', 'crescent_t',
+				'pittsburgh_c']
 
 # all of the spiders in the project.
 for spider in spiderList:
@@ -74,7 +75,9 @@ for child in root:
 	for muni in child:
 		if muni.attrib["id"] in spiderList and muni.attrib["id"] in spiderStatus[mess_same]:
 			muni.attrib["fill"] = "#00FA9A"
-		elif muni.attrib["id"] in spiderList and muni.attrib["id"] not in spiderStatus[mess_same]:
+		elif muni.attrib["id"] in spiderList and muni.attrib["id"] in spiderStatus[mess_none]:
+			muni.attrib["fill"] = "#FCBA03"
+		elif muni.attrib["id"] in spiderList:
 			muni.attrib["fill"] = "#800000"
 		elif muni.attrib["id"] not in spiderList:
 			muni.attrib["fill"] = "white"

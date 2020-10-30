@@ -3,7 +3,7 @@
 
 <img alt="A map of Allegheny County with completed municipalities highlighted." src="/alleco/supp_data/map.svg" height="500">
 
-_Key: Green means the municipality's spider is working, red means otherwise_
+_Key: Green means the municipality's spider is working, yellow means it is incomplete, red means its output is different from what was previously scraped._
 
 ## What is this?
 This is a project to understand and keep track of the governments of the 130 municipalities in Allegheny County, Pennsylvania. Because there is no (known) centralized database nor predictable structure to how those governments are organized or who runs them, we have to do things the most efficient way I can figure: webscraping each municipality's website.

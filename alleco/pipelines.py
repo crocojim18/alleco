@@ -17,6 +17,7 @@ def cleanItem(string):
 	string = string.strip()
 	string = sub("(\u2018|\u2019)", "'", string)
 	string = sub("(\u201C|\u201D)", '"', string)
+	string = sub("\xa0", " ", string)
 	if string[0:7] == "mailto:": string = string[7:]
 	return sub(r"\s+", " ", string)
 
@@ -72,6 +73,7 @@ class AllecoPipeline:
 		if "phone" in item: item["phone"] = cleanPhone(item["phone"])
 		if "termStart" in item: item["termStart"] = cleanDates(item["termStart"])
 		if "termEnd" in item: item["termEnd"] = cleanDates(item["termEnd"])
+		if "address" in item: item["address"] = cleanItem(item["address"])
 		return item
 
 class CsvExportPipeline:
