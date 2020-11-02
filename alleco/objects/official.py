@@ -1,5 +1,8 @@
 from scrapy.item import Item, Field
 
+def getAllText(quote):
+	return [i.replace("\xa0"," ").strip() for i in quote.xpath(".//text()").getall() if len(i.replace("\xa0"," ").strip())>0]
+
 class Official(Item):
 	muniName = Field()
 	muniType = Field()
