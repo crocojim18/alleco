@@ -13,12 +13,12 @@ class baldwin_t(scrapy.Spider):
 			yield scrapy.Request(url=url, callback=self.parse)
 
 	def parse(self, response):
-		for quote in response.xpath('//div[@class="baldwin-staff"]//strong[contains(text(),"Board ")]'):
+		for quote in response.xpath('//div[@class="baldwin-staff" and contains(strong/text(),"Board ")]'):
 			yield Official(
 				muniName=self.muniName,
 				muniType=self.muniType,
 				office="COMMISSIONER",
-				name=quote.xpath("../h4/text()").get(),
+				name=quote.xpath("h4/text()").get(),
 				url=response.url)
 		for quote in response.xpath('//div[contains(strong/text(),"Taxes")]/h4'):
 			yield Official(
