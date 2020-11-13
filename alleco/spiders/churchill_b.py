@@ -35,7 +35,7 @@ class churchill_b(scrapy.Spider):
 			yield Official(
 				muniName=self.muniName,
 				muniType=self.muniType,
-				office="MAYOR",
+				office="TAX COLLECTOR",
 				name=self._name(quote.xpath("tr[2]//strong/text()").get()),
 				termEnd=quote.xpath("tr[2]/td[2]/p/text()").get(),
 				url=response.url)
