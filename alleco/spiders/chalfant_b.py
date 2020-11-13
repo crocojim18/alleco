@@ -11,7 +11,11 @@ class chalfant_b(scrapy.Spider):
 	def start_requests(self):
 		urls = ['http://chalfantborough-pa.org/government/borough-council/']
 		for url in urls:
-			yield scrapy.Request(url=url, callback=self.parse)
+			yield scrapy.Request(url=url, 
+				callback=self.parse, 
+				headers={
+				'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+				})
 
 	def parse(self, response):
 		phone=response.xpath('//div[@class="pf-content"]/p[2]/text()').get().split(" ")[-1]
@@ -51,7 +55,7 @@ class chalfant_b(scrapy.Spider):
 		if pieces[0][-1]==".":
 			pieces = pieces[1:]
 		for word in pieces:
-			print("'"+word+"': "+str(word[0]=="("))
+			#print("'"+word+"': "+str(word[0]=="("))
 			if word[0]=="(":
 				break
 			toRet.append(word)
