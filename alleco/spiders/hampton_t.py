@@ -15,7 +15,7 @@ class hampton_t(scrapy.Spider):
 			yield scrapy.Request(url=url, callback=self.parse)
 
 	def parse(self, response):
-		for quote in response.xpath('//div[@id="divEditoreb0366d2-7125-4b47-bda5-1c51fbac2709"]'):
+		for quote in response.xpath('//div[contains(strong/text(),"Sitting left to right")]'):
 			bits = getAllText(quote)
 			bits = bits[1].split(",")[0].strip(":")
 			yield Official(

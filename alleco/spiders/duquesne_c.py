@@ -6,7 +6,7 @@ class duquesne_c(scrapy.Spider):
 	name = "duquesne_c"
 	muniName = "DUQUESNE"
 	muniType = "CITY"
-	complete = False
+	complete = True
 
 	def start_requests(self):
 		urls = ['http://duquesnepa.us/elected_officials', 'http://duquesnepa.us/city_officials']
@@ -18,6 +18,9 @@ class duquesne_c(scrapy.Spider):
 				})
 
 	def parse(self, response):
+		#file = open(response.url.split("/")[-1],'w')
+		#file.write(response.xpath(".").get())
+		#file.close()
 		if "elected" in response.url:
 			folks = []
 			bits = getAllText(response.xpath('//td[@id="esbCr2x1"]/..'))
@@ -29,6 +32,7 @@ class duquesne_c(scrapy.Spider):
 				else:
 					temp.append(i)
 			folks.append(temp)
+		#	print(folks)
 			for folk in folks:
 				yield Official(
 					muniName=self.muniName,
@@ -46,5 +50,13 @@ class duquesne_c(scrapy.Spider):
 				office="TREASURER",
 				name=bits[1],
 				url=response.url)
-		#EXPECTED: 1 at-large controller
-		#Unable to be found on the Duquesne website
+			if response.xpath('//*[contains(text(),"Controller")]').get()==None:
+				#Emailed Duquesne Manager concerning the Controller, who I could not find listed on the website.
+				#On 11/15/20 he responded that the Duquesne Controller was Maureen Strahl.
+				#While ideally we would scrape this, this will be returned as long as 'Controller' is not on this webpage
+				yield Official(
+					muniName=self.muniName,
+					muniType=self.muniType,
+					office="CONTROLLER",
+					name="Maureen Strahl",
+					url=None)
