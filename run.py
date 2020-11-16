@@ -17,7 +17,7 @@ spiderList = ['aleppo_t', 'aspinwall_b', 'avalon_b', 'baldwin_b',
 				'crafton_b', 'crescent_t', 'dormont_b', 'dravosburg_b', 'duquesne_c',
 				'hampton_t', 'mccandless_t', 'monroeville_b', 'moon_t', 'mount_lebanon_t',
 				'penn_hills_t', 'pennsbury_village_b', 'pittsburgh_c', 'plum_b', 'ross_t',
-				'shaler_t', 'upper_st_clair_t']
+				'scott_t', 'shaler_t', 'upper_st_clair_t']
 
 # all of the spiders in the project.
 for spider in spiderList:
