@@ -27,7 +27,7 @@ class penn_hills_t(scrapy.Spider):
 	def _member(self, textarr, url, office="MEMBER OF COUNCIL"):
 		phone = textarr[1]
 		name = textarr[0]
-		email = None if len(textarr)!=4 else textarr[3]
+		email = None if len(textarr)<4 else textarr[3]
 		return Official(
 			muniName=self.muniName,
 			muniType=self.muniType,
