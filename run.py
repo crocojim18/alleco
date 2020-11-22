@@ -15,9 +15,10 @@ spiderList = ['aleppo_t', 'aspinwall_b', 'avalon_b', 'baldwin_b',
 				'bridgeville_b', 'carnegie_b', 'castle_shannon_b', 'chalfant_b',
 				'cheswick_b', 'churchill_b', 'clairton_c', 'collier_t', 'coraopolis_b',
 				'crafton_b', 'crescent_t', 'dormont_b', 'dravosburg_b', 'duquesne_c',
-				'hampton_t', 'mccandless_t', 'monroeville_b', 'moon_t', 'mount_lebanon_t',
-				'penn_hills_t', 'pennsbury_village_b', 'pittsburgh_c', 'plum_b', 'ross_t',
-				'scott_t', 'shaler_t', 'south_fayette_t', 'upper_st_clair_t', 'wilkinsburg_b']
+				'franklin_park_b', 'hampton_t', 'mccandless_t', 'monroeville_b',
+				'moon_t', 'mount_lebanon_t', 'penn_hills_t', 'pennsbury_village_b',
+				'pittsburgh_c', 'plum_b', 'ross_t', 'scott_t', 'shaler_t', 
+				'south_fayette_t', 'upper_st_clair_t', 'wilkinsburg_b']
 
 # all of the spiders in the project.
 for spider in spiderList:
@@ -59,6 +60,7 @@ for spider in spiderList:
 			spiderStatus[mess_same].append(spider)
 		else:
 			spiderStatus[mess_diff].append(spider)
+			#print("\t{}\n\t{}".format(Counter(tempList) - Counter(oldList),Counter(oldList) - Counter(tempList)))
 	elif tempThere:
 		spiderStatus[mess_noPrior].append(spider)
 		rename("results/%s_temp.csv" % spider, "results/%s.csv" % spider)

@@ -43,6 +43,8 @@ class pittsburgh_c(scrapy.Spider):
 				if response.url[-10] == '8':
 					tempAddr = [x.strip() for x in response.xpath('//*[@class="contacts-content"][1]//text()').getall() if x.strip()!='']
 					alldict["address"] = self._address(tempAddr[1:4])
+					tempPhone = [x.strip() for x in response.xpath('//*[@class="contacts-content"][1]//text()').getall() if x.strip()!='']
+					alldict["phone"] = tempPhone[4]
 				elif response.url[-10] == '7':
 					tempEmail = [x.strip() for x in response.xpath('//*[@class="contacts-content"]')[1:2].xpath('.//text()').getall() if x.strip()!='']
 					alldict["email"] = self._email(tempEmail)
