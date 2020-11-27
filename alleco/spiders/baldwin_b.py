@@ -43,4 +43,4 @@ class baldwin_b(scrapy.Spider):
 					office="TAX COLLECTOR",
 					name=quote.xpath("h4/text()").get(),
 					url=response.url,
-					phone=quote.xpath('div[2]/text()').get().split(" ")[1])
+					phone=quote.xpath('div[2]/text()').get())
