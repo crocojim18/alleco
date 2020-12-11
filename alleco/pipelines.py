@@ -53,7 +53,7 @@ def cleanDates(string):
 	string = cleanItem(string)
 	months = ["January","February","March","April","May","June",
 				"July","August","September","October","November","December"]
-	match = search("(?P<month>{})".format("|".join(months))+r"? ?(?P<date>\d{1,2})?,? ?(?P<year>\d{4})", string)
+	match = search("(?P<month>{})".format("|".join(months))+r" ?(?P<date>\d{1,2})?,? ?(?P<year>\d{4})", string)
 	if match == None: return cleanDatesNumeric(string)
 	else:
 		toRet = ""

@@ -16,7 +16,7 @@ spiderList = ['aleppo_t', 'aspinwall_b', 'avalon_b', 'baldwin_b',
 				'cheswick_b', 'churchill_b', 'clairton_c', 'collier_t', 'coraopolis_b',
 				'crafton_b', 'crescent_t', 'dormont_b', 'dravosburg_b', 'duquesne_c',
 				'east_deer_t', 'east_mckeesport_b',
-				'franklin_park_b', 'hampton_t', 'mccandless_t', 'monroeville_b',
+				'franklin_park_b', 'hampton_t', 'ingram_b', 'mccandless_t', 'monroeville_b',
 				'moon_t', 'mount_lebanon_t', 'north_fayette_t', 'penn_hills_t',
 				'pennsbury_village_b', 'pittsburgh_c', 'plum_b', 'ross_t', 'scott_t',
 				'shaler_t', 'south_fayette_t', 'upper_st_clair_t', 'wilkinsburg_b']
