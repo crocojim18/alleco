@@ -1,9 +1,38 @@
 from scrapy.item import Item, Field
 
 def getAllText(quote):
-	return [i.replace("\xa0"," ").strip() for i in quote.xpath(".//text()").getall() if len(i.replace("\xa0"," ").strip())>0]
+	"""
+	Returns cleaned text from a parsed node.
+	Removes non-breaking spaces (\xa0) & extra whitespace.
+	"""
+	return [i.replace("\xa0"," ").strip()
+			for i in quote.xpath(".//text()").getall()
+			if len(i.replace("\xa0"," ").strip())>0]
 
 class Official(Item):
+	"""
+	Object type for municipal officials. Inherits Scrapy Item functions.
+
+	Parameters
+	----------
+	self.muniName : name of municipality
+	self.muniType : type of municipality (borough, township, city)
+	self.office : name of office
+	self.district : official's ward, district, or other internal division. defaults to AT-LARGE
+	self.name : official's name
+	self.email : official's email
+	self.phone : official's phone number
+	self.address : official's address
+	self.url : response.url for prior info
+	self.termStart : start date of official's term in office, string in ISO format
+	self.termEnd : end date of official's term in office, string in ISO
+	self.vacant : position status, boolean value
+
+	Attributes
+    ----------
+	self.setdefault() : assigns values
+	"""
+
 	muniName = Field()
 	muniType = Field()
 	office = Field()

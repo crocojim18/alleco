@@ -12,8 +12,8 @@ class robinson_t(scrapy.Spider):
 		urls = ['https://townshipofrobinson.com/commissioners/',
 		'https://townshipofrobinson.com/real-estate-tax/']
 		for url in urls:
-			yield scrapy.Request(url=url, 
-				callback=self.parse, 
+			yield scrapy.Request(url=url,
+				callback=self.parse,
 				headers={
 				'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
 				})
