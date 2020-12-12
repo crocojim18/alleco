@@ -32,7 +32,6 @@ class duquesne_c(scrapy.Spider):
 				else:
 					temp.append(i)
 			folks.append(temp)
-		#	print(folks)
 			for folk in folks:
 				yield Official(
 					muniName=self.muniName,
@@ -43,7 +42,6 @@ class duquesne_c(scrapy.Spider):
 					url=response.url)
 		elif "city" in response.url:
 			bits = getAllText(response.xpath('//span[contains(text(),"Treasurer")]/../../..'))
-			print(bits)
 			yield Official(
 				muniName=self.muniName,
 				muniType=self.muniType,

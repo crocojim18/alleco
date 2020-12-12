@@ -21,7 +21,6 @@ class franklin_park_b(scrapy.Spider):
 				for person in quote.xpath('.//li'):
 					thing = getAllText(person)
 					if len(thing)==4: thing = [thing[0]+thing[1]]+thing[2:]
-					print(thing)
 					if 'Junior Council Person' not in thing[0]:
 						yield Official(
 							muniName=self.muniName,

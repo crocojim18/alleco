@@ -25,7 +25,6 @@ class south_fayette_t(scrapy.Spider):
 					url=response.url)
 		elif response.url[-2]=='e':
 			for quote in response.xpath('//li[@class="InfoAdvanced widgetItem "]')[0:1]:
-				print(quote.xpath('text()').getall())
 				yield Official(
 					muniName=self.muniName,
 					muniType=self.muniType,

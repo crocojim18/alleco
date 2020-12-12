@@ -33,7 +33,6 @@ class dormont_b(scrapy.Spider):
 					if i.split(" ")[-1] in names: names[i.split(" ")[-1]]["name"] = " ".join(i.split(" ")[-2:])
 				#first name taken from 2019 election returns; was not on website when spider was first made
 				if names["Moore"]["name"]==None: names["Moore"]["name"] = "John Moore"
-				print(names)
 				for person in names:
 					yield Official(
 						muniName=self.muniName,

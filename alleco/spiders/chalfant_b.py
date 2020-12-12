@@ -55,7 +55,6 @@ class chalfant_b(scrapy.Spider):
 		if pieces[0][-1]==".":
 			pieces = pieces[1:]
 		for word in pieces:
-			#print("'"+word+"': "+str(word[0]=="("))
 			if word[0]=="(":
 				break
 			toRet.append(word)

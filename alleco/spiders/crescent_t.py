@@ -21,7 +21,6 @@ class crescent_t(scrapy.Spider):
 			for quote in response.xpath('//div[@class="panel-body"]')[0].xpath("p[5]/strong"):
 				wardtemp.append(quote.xpath("text()").get().strip("-").split("Commissioner ")[-1])
 			self.wardDict = {wardtemp[1]:wardtemp[0], wardtemp[3]:wardtemp[2]}
-			print(self.wardDict)
 			for quote in response.xpath('//div[@class="panel-body"]')[2].xpath("p")[0:4]:
 				curr = [x.strip() for x in quote.xpath(".//text()").getall() if len(x.strip())>0]
 				if len(curr)>4:

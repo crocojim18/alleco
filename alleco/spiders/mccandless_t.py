@@ -32,7 +32,6 @@ class mccandless_t(scrapy.Spider):
 
 	def _termEnd(self, string):
 		parts = string.replace("\xa0",' ').strip().split(" ")[-3:]
-		print(parts)
 		if parts[0]=="1st" and parts[1]=="Monday":
 			if parts[2] == "2022": return "January 3 2022"
 			elif parts[2] == "2024": return "January 1 2024"
