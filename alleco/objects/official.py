@@ -9,6 +9,12 @@ def getAllText(quote):
 			for i in quote.xpath(".//text()").getall()
 			if len(i.replace("\xa0"," ").strip())>0]
 
+def getAllLinks(quote):
+	"""
+	Returns all links in the given node
+	"""
+	return [i for i in quote.xpath(".//a/@href").getall()]
+
 class Official(Item):
 	"""
 	Object type for municipal officials. Inherits Scrapy Item functions.
