@@ -9,6 +9,15 @@ def getAllText(quote):
 			for i in quote.xpath(".//text()").getall()
 			if len(i.replace("\xa0"," ").strip())>0]
 
+def getTextOfType(quote, htmltype):
+	"""
+	Returns cleaned text from a parsed node that descends from the given type.
+	Removes non-breaking spaces (\xa0) & extra whitespace.
+	"""
+	return [i.replace("\xa0"," ").strip()
+			for i in quote.xpath(".//%s//text()" % htmltype).getall()
+			if len(i.replace("\xa0"," ").strip())>0]
+
 def getAllLinks(quote):
 	"""
 	Returns all links in the given node
