@@ -24,7 +24,7 @@ def cleanItem(string):
 def cleanPhone(string):
 	if string==None: return None
 	string = cleanItem(string)
-	match = search(r"(\d{3})[\) \-–]{0,2}(\d{3})[ \-–]{0,3}(\d{4})[, ]{0,2}(ext(ension|.)? | ?x ?)?(?P<ext>\d+)?", string, I)
+	match = search(r"(\d{3})[\) \-–]{0,2}(\d{3})[ \-–]{0,3}(\d{4})[, ]{0,2}(ext(ension|.)? ?| ?x ?)?(?P<ext>\d+)?", string, I)
 	if match == None: return string
 	else:
 		ending = "" if match.group("ext")==None else "p"+match.group("ext")
