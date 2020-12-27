@@ -20,7 +20,7 @@ def getTextOfType(quote, htmltype):
 
 def getAllLinks(quote):
 	"""
-	Returns all links in the given node
+	Returns all links in the given node.
 	"""
 	return [i for i in quote.xpath(".//a/@href").getall()]
 
