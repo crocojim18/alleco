@@ -9,8 +9,8 @@ class elizabeth_t(scrapy.Spider):
 	complete = True # do not change until spider is complete
 
 	def start_requests(self):
-		urls = ["https://www.elizabethtownshippa.com/board-of-commissioners",
-		"https://www.elizabethtownshippa.com/tax-collector"] # urls for requests go here
+		urls = ["http://www.elizabethtownshippa.com/board-of-commissioners",
+		"http://www.elizabethtownshippa.com/tax-collector"] # urls for requests go here
 		for url in urls:
 			yield scrapy.Request(url=url,callback=self.parse)
 
