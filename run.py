@@ -18,9 +18,9 @@ spiderList = ['aleppo_t', 'aspinwall_b', 'avalon_b', 'baldwin_b',
 				'east_deer_t', 'east_mckeesport_b',
 				'elizabeth_t', 'franklin_park_b', 'hampton_t', 'harrison_t', 'ingram_b',
 				'jefferson_hills_b', 'mccandless_t', 'mckeesport_c', 'monroeville_b',
-				'moon_t', 'mount_lebanon_t', 'munhall_b', 'north_fayette_t', 'o_hara_t',
-				'penn_hills_t', 'pennsbury_village_b', 'pittsburgh_c', 'pine_t', 'plum_b',
-				'richland_t', 'robinson_t', 'ross_t', 'scott_t', 'shaler_t',
+				'moon_t', 'mount_lebanon_t', 'munhall_b', 'north_fayette_t', 'north_versailles_t',
+				'o_hara_t', 'penn_hills_t', 'pennsbury_village_b', 'pittsburgh_c', 'pine_t',
+				'plum_b', 'richland_t', 'robinson_t', 'ross_t', 'scott_t', 'shaler_t',
 				'south_fayette_t', 'south_park_t', 'swissvale_b', 'upper_st_clair_t',
 				'west_deer_t', 'west_mifflin_b', 'whitehall_b', 'wilkinsburg_b']
 
