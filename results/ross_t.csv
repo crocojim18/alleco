@@ -1,6 +1,6 @@
 address,district,email,muniName,muniType,name,office,phone,termEnd,termStart,url,vacant
 ,WARD 1,commward1@ross.pa.us,ROSS,TOWNSHIP,Daniel DeMarco,COMMISSIONER,,,,https://www.ross.pa.us/245/Board-of-Commissioners,False
-,WARD 2,commward2@ross.pa.us,ROSS,TOWNSHIP,Steve Korbel,COMMISSIONER,,,,https://www.ross.pa.us/245/Board-of-Commissioners,False
+,WARD 2,commward2@ross.pa.us,ROSS,TOWNSHIP,,COMMISSIONER,,,,https://www.ross.pa.us/245/Board-of-Commissioners,True
 ,WARD 3,commward3@ross.pa.us,ROSS,TOWNSHIP,Sarah Poweska,COMMISSIONER,,,,https://www.ross.pa.us/245/Board-of-Commissioners,False
 ,WARD 4,commward4@ross.pa.us,ROSS,TOWNSHIP,Joe Laslavic,COMMISSIONER,,,,https://www.ross.pa.us/245/Board-of-Commissioners,False
 ,WARD 5,commward5@ross.pa.us,ROSS,TOWNSHIP,William McKellar,COMMISSIONER,,,,https://www.ross.pa.us/245/Board-of-Commissioners,False

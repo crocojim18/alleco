@@ -17,14 +17,23 @@ class ross_t(scrapy.Spider):
 		if response.url[-2]=='r':
 			for quote in response.xpath('//div[@class="cpTabPanels"]'):
 				arr = [i.strip() for i in quote.xpath('.//text()').getall() if len(i.strip())>0 and '$' not in i]
-				for i in range(9):
+				temp = []
+				peeps = []
+				for i in arr:
+					temp.append(i)
+					if '@' in i:
+						peeps.append(temp)
+						temp = []
+				for pers in peeps:
+					name = self._name(pers[1]) if "Commissioner" in pers[1] else None
 					yield Official(
 						muniName=self.muniName,
 						muniType=self.muniType,
 						office="COMMISSIONER",
-						district=arr[i*4].upper(),
-						name=self._name(arr[i*4+1]),
-						email=arr[i*4+3],
+						district=pers[0].upper(),
+						name=name,
+						email=pers[-1],
+						vacant=name==None,
 						url=response.url)
 		elif response.url[-2]=='l':
 			for quote in response.xpath('//div[contains(h2/text(),"Ross Tax Collector")]/p[1]'):
