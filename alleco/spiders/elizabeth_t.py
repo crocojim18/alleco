@@ -25,13 +25,18 @@ class elizabeth_t(scrapy.Spider):
 					phone=quote.xpath("div[4]/p/text()").get(),					
 					url=response.url)
 		elif "commissioners" in response.url:
-			for quote in response.xpath("//p[contains(text(),'Ward ')]/../.."):
-				allText = getAllText(quote)
+			names = [getAllText(i)[0].split(" -")[0] for i in response.xpath("//h1")]
+			# print(names)
+			data = [getAllText(quote) for quote in response.xpath("//p[contains(text(),'Ward ')]/../..")]
+			# print(data)
+			for allText in data:
+				if len(allText)<4:
+					allText.insert(0, names[2])
 				yield Official(
 					muniName=self.muniName,
 					muniType=self.muniType,
 					office="COMMISSIONER",
-					name=allText[0],
+					name=allText[0].split(" -")[0],
 					email=allText[1],
 					phone=allText[2],
 					district=allText[3].upper(),					
