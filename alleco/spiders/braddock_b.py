@@ -28,12 +28,13 @@ class braddock_b(scrapy.Spider):
 					url=response.url)
 		elif response.url[-1] == "/":
 			for quote in response.xpath("//div[@class='med information-text']//div[@class='itg-teambox']")[1:]:
+				name = quote.xpath("h3/text()").get()
 				yield Official(
 					muniName=self.muniName,
 					muniType=self.muniType,
 					office="MEMBER OF COUNCIL",
-					name=quote.xpath("h3/text()").get(),
-					district=self._districts(quote.xpath("h3/text()").get()),
+					name=name,
+					district=self._districts(name.split(" ")[-1]),
 					url=response.url)
 		elif response.url[-1] == "f":
 			for quote in response.xpath("//p[contains(text(), 'Tax Department Manager')]/.."):
@@ -49,10 +50,11 @@ class braddock_b(scrapy.Spider):
 		#Because this information is not on the Braddock website,
 		#I am using the 2017 and 2019 election records to deduce districts
 
-		if string=="Rob Parker": return "WARD 3"
-		elif string=="Lorne Berry": return "WARD 2"
-		elif string=="Tina Doose": return "WARD 2"
-		elif string=="De Andrea Dudley": return "WARD 1"
-		elif string=="Charlotte Clark": return "WARD 3"
-		elif string=="Kevin Henderson": return "WARD 1"
+		if string=="Parker": return "WARD 3"
+		elif string=="Berry": return "WARD 2"
+		elif string=="Doose": return "WARD 2"
+		elif string=="Dudley": return "WARD 1"
+		elif string=="Clark": return "WARD 3"
+		elif string=="Henderson": return "WARD 1"
+		elif string=="Scales": return "AT-LARGE"
 		else: return None
